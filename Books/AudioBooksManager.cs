@@ -58,6 +58,7 @@ namespace AudioBooks.Books
             {
                 driver.Navigate().GoToUrl(book.BookURL);
                 Parser.CheckCopyright(driver);
+                Parser.CheckIsPrice(driver);
                 string urlToDownload = Parser.GetBookURLDownload(book.BookID, driver);
                 int fileCount = Parser.GetFilesCount(book.BookID, urlToDownload);
                 return (urlToDownload, fileCount);
