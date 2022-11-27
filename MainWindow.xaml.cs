@@ -34,7 +34,10 @@ namespace AudioBooks
         private void DownloadButton_Click(object sender, RoutedEventArgs e)
         {
             if (AudioBooksManager.IsDownloading)
+            {
+                AudioBooksManager.Log.AddLogText("Другая аудиокнига уже загружается! Начать новую загрузку невозможно!");
                 return;
+            }
             Book book = ((FrameworkElement)sender).DataContext as Book;
             AudioBooksManager.DownloadBook(book);
         }

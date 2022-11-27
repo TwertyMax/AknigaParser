@@ -86,6 +86,11 @@ namespace AudioBooks.Books
                 Directory.CreateDirectory(GetBookPath(book));
             for (int i = 0; i < fileCount; i++)
             {
+                if(File.Exists(GetBookPath(book) + $@"\{i}.mp3"))
+                {
+                    AudioBooksManager.Log.AddLogText($"Файл {i}.mp3 в {GetBookPath(book)} уже существует.");
+                    continue;
+                }
                 string link = urlToDownload.Replace(fileCount < 10 ? $"0{fileCount}" : $"{fileCount}", $"0{i + 1}");
                 AudioBooksManager.IsDownloading = true;
                 Log.AddLogText($"Файл {i}.mp3 по ссылке {link} загружается в {GetBookPath(book)}.");
