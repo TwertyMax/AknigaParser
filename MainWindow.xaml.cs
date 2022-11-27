@@ -49,8 +49,8 @@ namespace AudioBooks
             if (AudioBooksManager.IsDownloading)
             {
                 if (MessageBox.Show(
-                    "Warning",
                     "Загрузка книги продолжается. Вы уверены?",
+                    "Предупреждение",
                     MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
                     e.Cancel = true;
             }
