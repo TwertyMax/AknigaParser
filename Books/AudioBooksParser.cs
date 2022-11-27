@@ -34,7 +34,7 @@ namespace AudioBooks.Books
 
         public void CheckCopyright(IWebDriver driver)
         {
-            if (driver.IsElementPresent(By.XPath("//div[contains(@class, 'book--item--closed-text')]")))
+            if (!driver.IsElementPresent(By.XPath("//div[contains(@class, 'book--item--closed-text')]")))
                 throw new Exception("Аудио книга недоступна из-за АП");
         }
 

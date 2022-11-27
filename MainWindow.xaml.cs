@@ -49,7 +49,7 @@ namespace AudioBooks
             if (AudioBooksManager.IsDownloading)
             {
                 if (MessageBox.Show(
-                    "Загрузка книги продолжается. Вы уверены?",
+                    "Идет загрузка книги. Вы уверены что хотите выйти?",
                     "Предупреждение",
                     MessageBoxButton.YesNo, MessageBoxImage.Warning) != MessageBoxResult.Yes)
                     e.Cancel = true;
